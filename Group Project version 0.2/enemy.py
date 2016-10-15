@@ -1,13 +1,48 @@
 from items import *
 
+enemy_rogue_knight = {
+    "id": "knight",
+
+    "name": "Rogue Knight",
+
+    "weak": ["Fire", "Bludgeon"],
+
+    "resist": ["Slash", "Stab"],
+
+    "attack": 45,
+
+    "hp": 100,
+
+    "temp_hp": 100,
+
+    "drop": []
+    }
+
+enemy_castle_mage = {
+    "id": "mage",
+
+    "name": "Castle Mage",
+
+    "weak": ["Slash", "Stab", "Bludgeon"],
+
+    "resist": ["Fire"],
+
+    "attack": 60,
+
+    "hp": 30,
+
+    "temp_hp": 30,
+
+    "drop": []
+    }
 enemy_kobold = {
     "id": "kobold",
 
     "name": "Harambe's Kobold",
 
-    "weak": "Slash",
+    "weak": ["Slash"],
 
-    "resist": "Fire",
+    "resist": ["Fire"],
 
     "attack": 10,
 
@@ -23,9 +58,9 @@ enemy_bandit = {
 
     "name": "Bandit",
 
-    "weak": "Fire",
+    "weak": ["Fire"],
 
-    "resist": "Slash",
+    "resist": ["Slash"],
 
     "attack": 30,
 
@@ -41,9 +76,9 @@ enemy_rufian = {
 
     "name": "Rufian",
 
-    "weak": "Fire",
+    "weak": ["Fire"],
 
-    "resist": "Slash",
+    "resist": ["Slash"],
 
     "attack": 30,
 
@@ -59,9 +94,9 @@ enemy_test = {
 
     "name": "Test",
 
-    "weak": "Fire",
+    "weak": ["Fire"],
 
-    "resist": "Slash",
+    "resist": ["Slash"],
 
     "attack": 30,
 
