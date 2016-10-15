@@ -25,6 +25,8 @@ Kirill the Wisest.""",
 
     "max enemy": 0,
 
+    "min enemy": 0,
+
     "check_item": [] 
 }
 
@@ -45,6 +47,8 @@ room_bar = {
     "enemy": [],
 
     "max enemy": 0,
+
+    "min enemy": 0,
 
     "check_item": [] 
     }
@@ -69,6 +73,8 @@ raises his brow at you. "What you want?" """,
 
     "max enemy": 0,
 
+    "min enemy": 0,
+
     "check_item": []  
     }
 
@@ -92,6 +98,8 @@ don't look like too much of an issue to get rid of, with the right tools at leas
 
         "max enemy": 2,
 
+        "min enemy": 1,
+
         "check_item": item_wood_block 
 
 }
@@ -110,9 +118,11 @@ on the walls and bloody arrows everywhere. There's clearly been a battle here.""
 
         "combat": True,
 
-        "enemy": [enemy_bandit],
+        "enemy": [enemy_bandit, enemy_rufian, enemy_rogue_knight, enemy_castle_mage],
 
         "max enemy": 4,
+
+        "min enemy": 3,
 
         "check_item": [] 
         }
@@ -136,6 +146,8 @@ amongst the graffiti: "Dicks Out!". What this means is unknown to you.""",
         "enemy": [enemy_kobold],
 
         "max enemy": 1,
+
+        "min enemy": 1,
 
         "check_item": [] 
 
@@ -161,6 +173,8 @@ There are cages to the left and right of him, with children caged up inside. It 
 
         "max enemy": 3,
 
+        "min enemy": 1,
+
         "check_item": []  
 }
 
@@ -182,6 +196,8 @@ there is no life here. It feels cold and eary, once inside, escaping will be dif
         "enemy": [enemy_kobold, enemy_test],
 
         "max enemy": 3,
+
+        "min enemy": 2,
 
         "check_item": item_axe 
         }
@@ -205,6 +221,8 @@ some shady members.""",
 
         "max enemy": 5,
 
+        "min enemy": 2,
+
         "check_item": []  
 }
 room_clearing_two = {
@@ -225,6 +243,8 @@ room_clearing_two = {
 
         "max enemy": 0,
 
+        "min enemy": 0,
+
         "check_item": item_princess 
 }
 room_clearing = {
@@ -244,6 +264,8 @@ room_clearing = {
         "enemy": [],
 
         "max enemy": 0,
+
+        "min enemy": 0,
 
         "check_item": [] 
 }
