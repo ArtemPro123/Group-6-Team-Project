@@ -200,8 +200,8 @@ def execute_go(direction):
                 print("You cannot enter here yet, there must be something you need")
             else:
                 print("moving into " + str(current_room["name"]))
-        else:
-            print("You cannot go there") 
+    else:
+        print("You cannot go there") 
 
 def execute_take(item_id):
     for item in current_room["items"]: 
@@ -233,12 +233,12 @@ def execute_attack(enemy_, item_id):
                 for enemyx in enemies:
                     if enemy_ == enemyx["id"]:
                         
-                        if item["type"] == enemyx["weak"]:
+                        if item["type"] in enemyx["weak"]:
                             enemyx["temp_hp"] = enemyx["temp_hp"] - int((2 * item["attack"]))
                             print("that was super effective!")
                             print(enemyx["name"] + " has " + str(enemyx["temp_hp"]) + " hp")
                             break
-                        elif item["type"] == enemyx["resist"]: 
+                        elif item["type"] in enemyx["resist"]: 
                             enemyx["temp_hp"] = enemyx["temp_hp"] - int((0.5 * item["attack"]))
                             print("that wasn't very effective...")
                             print(enemyx["name"] + " has " + str(enemyx["temp_hp"]) + " hp")
