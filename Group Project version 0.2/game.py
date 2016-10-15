@@ -11,12 +11,16 @@ import sys
 global type_attack
 
 type_attack = ["Slash", "Fire", "Stab", "Bludgeon"]
+#declares a list of attack types, to calculate "super effective" "not very effective" etc. 
 def class_decide(question):
+    #is used to pick your class at the start of the game
     global inventory
     global hp
     global temp_hp
+    #declares these as global variables so you don't have to use dictionary variable names throughout the code
     print("choose a class from: Warrior, Mage, Rogue, Cleric")
     reply = str(input(question + '(w/m/r/c)' + " to decide:")).lower().strip()
+    #asks user what class they want to choose by asking them to input single characters 
     if reply[0] == 'w':
         inventory = warrior["inventory"] 
         hp = warrior["hp"]
@@ -33,21 +37,25 @@ def class_decide(question):
         inventory = cleric["inventory"]
         hp = cleric["hp"]
         temp_hp = cleric["temp_hp"]
+        #sets the global variables to equal those defined in the player module
     else:
         class_decide("please enter ") 
         
 def list_of_items(items):
     return ", ".join(i["name"] for i in items) 
-         
+     #returns items as a string for viewing in the game     
 
 def print_room_items(room):
+    #tells the user what items there are in the room
        if len(room["items"]) != 0: 
         print("There is " + str(list_of_items(room["items"]) + " here."))  
         print("") 
 def print_inventory_items(items):
+    #tells the user what items they have in their inventory 
     print("You have " + str(list_of_items(items)) + ".") 
     print("") 
 def yes_or_no(question):
+    #declares function for asking the user a closed question 
     reply = str(input(question+' (y/n): ')).lower().strip()
     if reply[0] == 'y':
         return True
@@ -55,22 +63,25 @@ def yes_or_no(question):
         return False
     else:
         return yes_or_no("please enter y/n")
+    #loops through until they answer with either y/n 
 
 def print_enemies(enemies):
     global current_room
     global prev_room
-    x = [] 
+    #declares variables globally to allow us to manipulate them 
+    x = []
     for enemy_ in enemies:
+        #enemy_ used so we dont colide with enemy module 
         x.append(enemy_["name"])
-        
+        #adds the enemies that are in the list so we print it off as a nice string. 
     print("There is " + str(x) + " here.")
     question = "Do you want to fight?"
+    #asks the user whether they want to fight the current enemies or flee for the time being
     if yes_or_no(question) == False:
         current_room = prev_room
         main()
     else:
-        return True 
-## plans to make it so that a room can regen enemies if your coming back to it       
+        return True       
 def print_room(room):
     # Display room name
     print("")
@@ -87,6 +98,7 @@ def print_room(room):
 def print_arena(enemies):
     for current in enemies:
         print(current["name"] + ":" + str(current["temp_hp"]))
+        #prints the enemies along with their current hp
 def exit_leads_to(exits, direction):
     return rooms[exits[direction]]["name"]
 
@@ -126,20 +138,23 @@ def print_combat_menu(inventory, enemies):
     for i in inventory:
         if i["type"] == "Heal":
             print("USE " + str(i["id"]).upper() + " to heal for " + str(i["hp"]) + ".")
+            #creates a list of the users items depending on type and then for each item in list shows whether they can "use" or "attack" with the item
     print("What do you want to do?")
     
 def is_valid_exit(exits, chosen_exit):
     return chosen_exit in exits.keys()
 
 def execute_buy(item_id):
-    global gold 
-    
+    global gold
     for item in current_room["market"]:
+        #searches through the items that are in the market part of the rooms dictionary 
         if item_id == item["id"]:
             if gold > item["cost"]:
+                #if you have more gold than the item costs then proceed with buying 
                 inventory.append(item)
                 current_room["market"].remove(item)
                 gold = gold - item["cost"]
+                #adds the item to ure inventory and removes it from the shop, gold minus the cost is your remaining gold now 
                 print("you have bought " + str(item["name"]))
                 print("you have " + str(gold) + " gold")  
                 break
@@ -156,6 +171,7 @@ def execute_sell(item_id):
             current_room["market"].append(item)
             print("you have sold " + str(item["name"]) + " you have gained, " + str(int(0.5*item["cost"]))) 
             print("you have " + str(gold) + " gold")
+            #same process as buy but adds half the items cost to your gold value and adds to shop instead of taking away
             break
         else: 
             print("You cannot sell that")        
@@ -172,7 +188,10 @@ def execute_go(direction):
                 x = yes_or_no(question)
                 if x == True:
                     print("moving into " + str(current_room["name"]))
-                    inventory.remove(item_helping_hand) 
+                    inventory.remove(item_helping_hand)
+            #checks to see if the user has the helping hand item that may be used to pass through areas without
+            #a specific item and then asks them whether they want to use helping hand to get through or not
+            #important that this comes before the other item check or it wont check for helping hand 
                 else:
                     current_room = prev_room
                     print("you moved back as you did not want to sacrifice helping hand")
@@ -228,6 +247,8 @@ def execute_attack(enemy_, item_id):
                             enemyx["temp_hp"] = enemyx["temp_hp"] -  item["attack"]
                             print(enemyx["name"] + " has " + str(enemyx["temp_hp"]) + " hp")
                             break
+                #these if statements above check the damage type and compare to whether the enemy is weak to it and
+                #does damage accordingly, 2x 0.5x or normal damage 
         else:
             print("You cannot attack with that")
 
@@ -328,7 +349,7 @@ def combat():
     if current_room["combat"] == True:
         global enemies
         enemies = []
-        for x in range(1, current_room["max enemy"]):
+        for x in range(current_room["min enemy"], current_room["max enemy"]):
             temp_enemy = random.choice(current_room["enemy"])
             if temp_enemy != None:
                 if temp_enemy not in enemies:
