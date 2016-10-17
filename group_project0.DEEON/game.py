@@ -155,23 +155,23 @@ def is_valid_exit(exits, chosen_exit):
 def execute_buy(item_id):
     global gold
     for item in current_room["market"]:
-        #searches through the items that are in the market part of the rooms dictionary 
+            #searches through the items that are in the market part of the rooms dictionary 
         if item_id == item["id"]:
             if gold > item["cost"]:
-                #if you have more gold than the item costs then proceed with buying 
+                    #if you have more gold than the item costs then proceed with buying 
                 inventory.append(item)
                 current_room["market"].remove(item)
                 gold = gold - item["cost"]
-                #adds the item to ure inventory and removes it from the shop, gold minus the cost is your remaining gold now 
+                    #adds the item to ure inventory and removes it from the shop, gold minus the cost is your remaining gold now 
                 print("you have bought " + str(item["name"]))
                 print("you have " + str(gold) + " gold")  
                 break
             else:
                 print("You don't have enough gold mate")
-            
+                
 def execute_sell(item_id):
     global gold 
-    
+        
     for item in inventory:
         if item_id == item["id"]: 
             inventory.remove(item)
@@ -179,11 +179,11 @@ def execute_sell(item_id):
             current_room["market"].append(item)
             print("you have sold " + str(item["name"]) + " you have gained, " + str(int(0.5*item["cost"]))) 
             print("you have " + str(gold) + " gold")
-            #same process as buy but adds half the items cost to your gold value and adds to shop instead of taking away
+                #same process as buy but adds half the items cost to your gold value and adds to shop instead of taking away
             break
         else: 
             print("You cannot sell that")        
-                 
+                     
 def execute_go(direction):
     global current_room
     global prev_room
