@@ -289,7 +289,7 @@ def execute_use(item_id):
                 temp_hp = temp_hp + item["hp"]
                 if temp_hp > hp:
                     temp_hp = hp
-                print("hp: " + str(hp))
+                print("hp: " + str(temp_hp))
                 inventory.remove(item)
                 break
             else:
