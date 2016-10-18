@@ -215,7 +215,7 @@ there is no life here. It feels cold and eary, once inside, escaping will be dif
 
         "combat": True,
 
-        "enemy": [enemy_kobold, enemy_test],
+        "enemy": [enemy_kobold, enemy_harambe_warrior],
 
         "max enemy": 3,
 
@@ -244,7 +244,7 @@ some shady members.""",
 
         "combat": True,
 
-        "enemy": [enemy_bandit, enemy_kobold, enemy_rufian, enemy_test],
+        "enemy": [enemy_bandit, enemy_kobold, enemy_rufian, enemy_harambe_warrior],
 
         "max enemy": 5,
 
