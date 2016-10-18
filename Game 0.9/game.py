@@ -178,7 +178,7 @@ def execute_buy(item_id):
     for item in current_room["market"]:
             #searches through the items that are in the market part of the rooms dictionary 
         if item_id == item["id"]:
-            if gold > item["cost"]:
+            if gold >= item["cost"]:
                     #if you have more gold than the item costs then proceed with buying 
                 inventory.append(item)
                 current_room["market"].remove(item)
@@ -233,11 +233,20 @@ def execute_go(direction):
         print("You cannot go there") 
 
 def execute_take(item_id):
+    global gold 
     for item in current_room["items"]: 
-        if item_id == item["id"]: 
-            inventory.append(item) 
+        if item_id == item["id"]:
+            if item in inventory:
+                if item["type"] in type_attack:
+                    gold = gold + (0.5 * item["cost"])
+                    print("you have gained " + str(0.5*item["cost"]) + " gold from " + str(item["name"]))
+		    print("you have " + gold + " gold." 
+			
+            else: 
+                inventory.append(item)
+                print("you have taken " + str(item["name"]))
             current_room["items"].remove(item) 
-            print("you have taken " + str(item["name"]))
+            
             break   
         else: 
             print("You cannot take that.") 
@@ -505,7 +514,7 @@ def end_game():
 	print("Ben van Rooyen\n")
 	time.sleep(1.5)
 	print("Rest In Peace Harambe 1999-2016\n")
-	nput()
+	input()
 
 
     
@@ -526,7 +535,7 @@ def main():
     # Main game loop
     while True:
         # Display game status (room description, inventory etc.)
-        print("\n" *25)
+        print("\n" * 4)
         print(current_room["ascii"])
 
         print_room(current_room)
