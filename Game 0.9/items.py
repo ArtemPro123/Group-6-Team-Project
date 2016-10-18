@@ -10,9 +10,9 @@ item_dagger = {
 
     "type": "Stab",
 
-    "attack": random.randint(15, 25),
+    "attack": random.randint(15, 30),
 
-    "crit": 6, 
+    "crit": 8, 
 
     "cost": 20,
 
@@ -27,7 +27,9 @@ item_barman = {
     "description":
     """The publicity manager at the zoo""",
 
-    "type": "None"
+    "type": "None",
+
+    "cost": 0
 }
 
 item_helping_hand = {
@@ -87,11 +89,13 @@ item_isiah = {
     "description":
     """A 4 year old lad from your village.""",
 
-    "type": "None"
+    "type": "None",
+
+    "cost": 0 
     }
 
 item_mage_staff = {
-    "id": "mage staff",
+    "id": "staff",
 
     "name": "Mage Staff",
 
@@ -170,7 +174,7 @@ item_upg_sword = {
 
     "attack": random.randint(45, 55),
 
-    "crit": 4, 
+    "crit": 6, 
     
     "cost": 30,
 
@@ -227,15 +231,3 @@ item_potion = {
 
     "chance": 5 
 }
-item_clairvoyence = {
-    "id": "clairvoyence",
-
-    "name": "Clairvoyence",
-
-    "description":
-    """It will show you the way""",
-
-    "type": "Use", 
-
-    "cost": 50 
-    }
