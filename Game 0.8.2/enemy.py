@@ -15,7 +15,7 @@ enemy_rogue_knight = {
 
     "temp_hp": 100,
 
-    "drop": []
+    "drop": [item_bandage]
     }
 
 enemy_castle_mage = {
@@ -33,7 +33,7 @@ enemy_castle_mage = {
 
     "temp_hp": 30,
 
-    "drop": []
+    "drop": [item_bandage, item_mage_staff]
     }
 enemy_kobold = {
     "id": "kobold",
@@ -50,7 +50,7 @@ enemy_kobold = {
 
     "temp_hp": 30,
 
-    "drop": []
+    "drop": [item_dagger]
 
 } 
 enemy_bandit = {
@@ -68,7 +68,7 @@ enemy_bandit = {
 
     "temp_hp": 40, 
     
-    "drop": [item_mage_staff, item_bandage]
+    "drop": [item_upg_sword, item_bandage]
 
 } 
 enemy_rufian = {
@@ -86,13 +86,13 @@ enemy_rufian = {
 
     "temp_hp": 40, 
     
-    "drop": [item_mage_staff, item_bandage]
+    "drop": [item_upg_sword, item_bandage]
 
 }
-enemy_test = {
-    "id": "test",
+enemy_harambe_warrior = {
+    "id": "warrior",
 
-    "name": "Test",
+    "name": "Harambe's Warrior",
 
     "weak": ["Fire"],
 
@@ -104,7 +104,7 @@ enemy_test = {
 
     "temp_hp": 40, 
     
-    "drop": [item_mage_staff, item_bandage]
+    "drop": [item_upg_sword, item_bandage]
 
 } 
 enemy_harambe = {
