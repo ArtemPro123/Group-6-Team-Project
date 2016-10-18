@@ -10,13 +10,13 @@ enemy_rogue_knight = {
 
     "resist": ["Slash", "Stab"],
 
-    "attack": random.randint(30, 50),
+    "attack": random.randint(15, 30),
 
     "hp": 100,
 
     "temp_hp": 100,
 
-    "drop": [item_bandage]
+    "drop": [item_bandage, item_upg_sword, item_mage_staff, item_helping_hand, item_restoration_potion]
     }
 
 enemy_castle_mage = {
@@ -28,7 +28,7 @@ enemy_castle_mage = {
 
     "resist": ["Fire"],
 
-    "attack": random.randint(50, 70),
+    "attack": random.randint(20, 70),
 
     "hp": 30,
 
@@ -81,7 +81,7 @@ enemy_rufian = {
 
     "resist": ["Slash"],
 
-    "attack": random.randint(20, 35),
+    "attack": random.randint(20, 30),
 
     "hp": 40,
 
@@ -99,7 +99,7 @@ enemy_harambe_warrior = {
 
     "resist": ["Fire"],
 
-    "attack": random.randint(20,40),
+    "attack": random.randint(5, 50),
 
     "hp": 40,
 
@@ -117,7 +117,7 @@ enemy_harambe = {
 
     "resist": [],
 
-    "attack": random.randint(30, 70),
+    "attack": random.randint(25, 50),
 
     "hp": 150,
 
