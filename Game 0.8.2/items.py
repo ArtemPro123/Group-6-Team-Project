@@ -10,7 +10,9 @@ item_dagger = {
 
     "attack": 100,
 
-    "cost": 20
+    "cost": 20,
+
+    "chance": 6 
     }
 
 item_barman = {
@@ -34,7 +36,9 @@ item_helping_hand = {
 
     "type": "None",
 
-    "cost": 60
+    "cost": 60, 
+
+    "chance": 3
     }
 
 item_mace = {
@@ -49,7 +53,9 @@ item_mace = {
 
     "attack": 30,
 
-    "cost": 20
+    "cost": 20, 
+
+    "chance": 5 
     }
 item_restoration_potion = {
     "id": "restore",
@@ -63,7 +69,9 @@ item_restoration_potion = {
 
     "hp": 30,
 
-    "cost": 30
+    "cost": 30, 
+
+    "chance": 4
     } 
 item_isiah = {
     "id": "isiah",
@@ -88,7 +96,9 @@ item_mage_staff = {
 
     "attack": 50,
 
-    "cost": 200
+    "cost": 200, 
+
+    "chance": 3 
 }
 
 item_bandage = {
@@ -103,7 +113,9 @@ item_bandage = {
 
     "hp": 50,
 
-    "cost": 30
+    "cost": 30, 
+
+    "chance": 8 
 
 }
 
@@ -131,7 +143,9 @@ item_sword = {
 
     "attack": 20,
 
-    "cost": 20
+    "cost": 20, 
+
+    "chance": 4 
 
 } 
 item_upg_sword = {
@@ -146,7 +160,9 @@ item_upg_sword = {
 
     "attack": 50,
     
-    "cost": 30
+    "cost": 30,
+
+    "chance": 3
 
     }
 item_axe = {
@@ -161,7 +177,9 @@ item_axe = {
 
     "attack": 20,
     
-    "cost": 30 
+    "cost": 30, 
+
+    "chance": 4  
 }
 item_chainmail = {
     "id": "chainmail",
@@ -175,7 +193,9 @@ item_chainmail = {
 
     "hp": 50,
 
-    "cost": 40 
+    "cost": 40, 
+
+    "chance": 4  
 }
 item_potion = {
     "id": "potion",
@@ -189,7 +209,9 @@ item_potion = {
 
     "hp": 100, 
 
-    "cost": 40 
+    "cost": 40, 
+
+    "chance": 5 
 }
 item_clairvoyence = {
     "id": "clairvoyence",
