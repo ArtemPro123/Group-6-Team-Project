@@ -403,6 +403,10 @@ def combat():
 					if enemy_["temp_hp"] < 1:
 						print("You killed 1 " + enemy_["name"])
 						enemy_["temp_hp"] = enemy_["hp"] 
+						for item in enemy_["drop"]: 
+							if random.randint(0, item["chance"]) > 2: 
+								current_room["items"].append(item)
+								print("The enemy dropped a " + item["name"])
 						current_room["enemy_present"].remove(enemy_)
 				if len(current_room["enemy_present"]) == 0:
 					current_room["combat"] = False
@@ -484,7 +488,7 @@ def end_game():
 	print("Ben van Rooyen\n")
 	time.sleep(1.5)
 	print("Rest In Peace Harambe 1999-2016\n")
-	nput()
+	input()
 
 
     
