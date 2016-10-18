@@ -50,7 +50,7 @@ enemy_kobold = {
 
     "temp_hp": 30,
 
-    "drop": []
+    "drop": [item_dagger]
 
 } 
 enemy_bandit = {
