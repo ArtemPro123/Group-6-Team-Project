@@ -139,7 +139,6 @@ def exit_leads_to(exits, direction):
 def print_exit(direction, leads_to):
     print("GO " + direction.upper() + " to " + leads_to + ".")
 
-
 def print_menu(exits, room_items, inv_items, room_market):
     print("_" * 50)
 
@@ -159,6 +158,8 @@ def print_menu(exits, room_items, inv_items, room_market):
     for i in inv_items:
         if i["type"] == "Armour":
             print("WEAR "+ str(i["id"].upper()+ " to wear "+str(i["name"]+".")))
+
+    print("SEE MAP to see map")
 
 
     if len(current_room["market"]) > 0:
@@ -355,6 +356,31 @@ def execute_wear(item_id):
             else:
                 print("You cannot wear that.")  
 
+		def execute_see(maporcompass):
+    if maporcompass == "map":
+        print("""\
+        ╔═════════════════════════════════════════╗
+        ║                                         ║
+        ║ HARAMBE                                 ║
+        ║     ║                                   ║
+        ║     ║                                   ║
+        ║    ZOO════════════════FESTIVAL GROUNDS  ║
+        ║     ║                               ║   ║
+        ║     ║                               ║   ║
+        ║   CASTLE                            ║   ║
+        ║     ║                               ║   ║
+        ║     ║                               ║   ║
+        ║   BRDGE═══FOREST═════CLEARING═════CAMP  ║
+        ║     ║        ║                      ║   ║
+        ║     ║        ║                      ║   ║
+        ║    SHOP════VILAGE══════════════════BAR  ║
+        ║                                         ║
+        ╚═════════════════════════════════════════╝
+        """)
+        
+    else:
+        print("You cannot see that.")
+
 def execute_command(command):
 
     if 0 == len(command):
@@ -391,7 +417,11 @@ def execute_command(command):
             execute_wear(command[1])
         else:
             print("Wear what?")
-
+    elif command[0] == "see":
+        if len(command) >1:
+            execute_see(command[1])
+        else:
+            print("See what?")
     else:
         print("This makes no sense.")
 def execute_combat_command(command):
