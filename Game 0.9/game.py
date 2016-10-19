@@ -155,6 +155,11 @@ def print_menu(exits, room_items, inv_items, room_market):
         #Added price to items in store!!!!!!!!!
     for i in room_items: 
         print("TAKE " + str(i["id"]).upper() + " to take " + str(i["name"]) + ".")
+    
+    for i in inv_items:
+        if i["type"] == "Armour":
+            print("WEAR "+ str(i["id"].upper()+ " to wear "+str(i["name"]+".")))
+
 
     if len(current_room["market"]) > 0:
         for i in inv_items:
@@ -328,6 +333,20 @@ def execute_use(item_id):
             else:
                 print("You cannot use that item") 
 
+def execute_wear(item_id):
+    global hp
+    global temp_hp
+    for item in inventory: 
+        if item_id == item["id"]:
+            if item["type"] == "Armour": 
+                hp = hp+30 
+                temp_hp = temp_hp + 30
+                inventory.remove(item)
+                print("Your Max Hp is now: " + str(hp) +"\n" + "Your current Hp is: " + str(temp_hp)) 
+                break
+            else:
+                print("You cannot wear that.")  
+
 def execute_command(command):
 
     if 0 == len(command):
@@ -359,10 +378,14 @@ def execute_command(command):
             execute_drop(command[1])
         else:
             print("Drop what?")
+    elif command[0] == "wear":
+        if len(command) > 1:
+            execute_wear(command[1])
+        else:
+            print("Wear what?")
 
     else:
         print("This makes no sense.")
-
 def execute_combat_command(command):
     if 0 == len(command):
         return
