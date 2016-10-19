@@ -67,6 +67,7 @@ def print_room_items(room):
         print("There is " + str(list_of_items(room["items"]) + " here."))  
         print("") 
 def print_inventory_items(items):
+    global gold
     #tells the user what items they have in their inventory 
      if len(list_of_items(items)) > 0:
         print("You have " + str(list_of_items(items)) + ".") 
