@@ -356,7 +356,7 @@ room_zoo = {
 has purged your lands. All of the signs have been bent, written over and there seems to be recurring phrase
 amongst the graffiti: "Dicks Out!". What this means is unknown to you.""",
 
-        "exits": {"south": "Castle", "north": "Harambe's Pen"},
+        "exits": {"south": "Castle", "north": "Harambe's Pen", "east": "Festival Grounds"},
 
         "items": [],
 
