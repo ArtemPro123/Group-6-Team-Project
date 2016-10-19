@@ -16,7 +16,7 @@ enemy_rogue_knight = {
 
     "temp_hp": 100,
 
-    "drop": [item_bandage, item_upg_sword, item_mage_staff, item_helping_hand, item_restoration_potion]
+    "drop": [item_bandage, item_upg_sword, item_mage_staff, item_restoration_potion]
     }
 
 enemy_castle_mage = {
