@@ -61,7 +61,7 @@ def print_inventory_items(items):
         print("You have " + str(list_of_items(items)) + ".") 
         print("")
      if current_room["name"] == "General Store": #added gold amount player has
-        print("You have ", gold, " gold coins.")
+        print("You have ", str(gold), " gold coins.")
         print("")
 
 def yes_or_no(question):
@@ -240,7 +240,7 @@ def execute_take(item_id):
                 if item["type"] in type_attack:
                     gold = gold + (0.5 * item["cost"])
                     print("you have gained " + str(0.5*item["cost"]) + " gold from " + str(item["name"]))
-                    print("you have " + gold + " gold.")
+                    print("you have " + str(gold) + " gold.")
             else: 
                 inventory.append(item)
                 print("you have taken " + str(item["name"]))
