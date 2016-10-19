@@ -172,26 +172,27 @@ raises his brow at you. "What you want?" """,
     "activity": [],
 
     "ascii":"""
-                                                     *
-
-
-         ______________________________________________________________________________________________
+                                                     *                               ~   ~
+                                                                                  ~   ~
+                                                                               |.  .|
+         ______________________________________________________________________|  . |___________________
          ###############################################################################################
          ############################################/\#################################################
          ##########################################//   \\##############################################
          ########################################//      \\#############################################
-         ######################################//           \\###########################################
-         ####################################//               \\#########################################
-         ##################################//                   \\#######################################
-         ################################//                       \\#####################################
+         ######################################//           \\##########################################
+         ####################################//               \\########################################
+         ##################################//                   \\######################################
+         ################################//                       \\####################################
          _______________________________|| ======================= ||____________________________________
-         IIIIIIIIIIIIIIIIIIIIIIIIIIIIIII||   |                      ||IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
-         IIIIIIIII     ,    IIIIIIIIIIII||   |                     ||IIIIIIIIIIIII     ,     IIIIIIIIIIII
+         IIIIIIIIIIIIIIIIIIIIIIIIIIIIIII||   |¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯|    ||IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
+         IIIIIIIIIIIIIIIIIIIIIIIIIIIIIII||   |      SHOP      |    ||IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
+         IIIIIIIII     ,    IIIIIIIIIIII||   |________________|    ||IIIIIIIIIIIII     ,     IIIIIIIIIIII
          IIIIIIIII     ,    IIIIIIIIIIII||    _________            ||IIIIIIIIIIIII     ,     IIIIIIIIIIII
-         IIIIIIIII     ,    IIIIIIIIIIII||    |       |            ||IIIIIIIIIIIII     ,     IIIIIIIIIIII
-         IIIIIIIII     ,    IIIIIIIIIIII||    |       |            ||IIIIIIIIIIIII     ,     IIIIIIIIIIII
-         IIIIIIIIIIIIIIIIIIIIIIIIIIIIIII||    |       |            ||IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
-         IIIIIIIIIIIIIIIIIIIIIIIIIIIIIII||    |       |            ||IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
+         IIIIIIIII     ,    IIIIIIIIIIII||    |\     /|            ||IIIIIIIIIIIII     ,     IIIIIIIIIIII
+         IIIIIIIII     ,    IIIIIIIIIIII||    |  \ /  |            ||IIIIIIIIIIIII     ,     IIIIIIIIIIII
+         IIIIIIIIIIIIIIIIIIIIIIIIIIIIIII||    |  / \  |            ||IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
+         IIIIIIIIIIIIIIIIIIIIIIIIIIIIIII||    | /   \ |             ||IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
          ==============================//__________________________\\====================================
          ==============================||___________________________||===================================
          =============================//_____________________________\\==================================
