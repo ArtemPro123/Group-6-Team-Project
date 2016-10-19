@@ -10,7 +10,7 @@ import sys
 
 global type_attack
 
-type_attack = ["Slash", "Fire", "Stab", "Bludgeon"]
+type_attack = ["Slash", "Fire", "Stab", "Bludgeon", "Gun"]
 #declares a list of attack types, to calculate "super effective" "not very effective" etc. 
 def class_decide(question):
     #is used to pick your class at the start of the game
