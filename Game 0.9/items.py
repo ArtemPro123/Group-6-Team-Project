@@ -75,7 +75,7 @@ item_restoration_potion = {
 
     "type": "Heal",
 
-    "hp": 30,
+    "hp": 50,
 
     "cost": 30, 
 
@@ -123,7 +123,7 @@ item_bandage = {
 
     "type": "Heal",
 
-    "hp": 50,
+    "hp": 30,
 
     "cost": 30, 
 
