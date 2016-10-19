@@ -498,7 +498,7 @@ room_forest = {
         """This forest has a weird tinge to it, mist covers the ground, the trees bare no leaves
 there is no life here. It feels cold and eary, once inside, escaping will be difficult.""",
 
-        "exits": {"south": "Home", "east": "Camp"},
+        "exits": {"south": "Home", "east": "Clearing"},
 
         "items": [item_wood_block],
 
