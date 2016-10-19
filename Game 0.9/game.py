@@ -487,7 +487,7 @@ def bar_drink():
 	challenge = ""
 	correct_input = 0
 	print("Sitting along the bar three strangers reside. They notice your arrival and hail you over. The men are quite clearly drunk and challenge you to drink a pint faster then them game hoping your pockets might fund their next pint \n")
-	print("You have: " + str(gold)) 
+	print("You have: " + str(gold) + " Gold.") 
 	while correct_input != 1:
 		challenge = input("Would you like to accept their challenge? (Costs 10 coins), (Type y/n) \n").lower()
 		if challenge == "y":
