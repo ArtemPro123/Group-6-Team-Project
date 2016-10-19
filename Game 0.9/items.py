@@ -249,7 +249,7 @@ item_knights_armour = {
 }
 
 item_hunting_rifle = {
-    "id": "Rifle",
+    "id": "rifle",
 
     "name": "Hunting Rifle",
 
