@@ -487,11 +487,14 @@ def bar_drink():
 	challenge = ""
 	correct_input = 0
 	print("Sitting along the bar three strangers reside. They notice your arrival and hail you over. The men are quite clearly drunk and challenge you to drink a pint faster then them game hoping your pockets might fund their next pint \n")
-        print("You have: " + str(gold)) 
+	print("You have: " + str(gold)) 
 	while correct_input != 1:
 		challenge = input("Would you like to accept their challenge? (Costs 10 coins), (Type y/n) \n").lower()
 		if challenge == "y":
-			if gold > 9: 
+			if gold < 10:
+				print("You need more gold to challenge")
+				correct_input = 1
+			else: 
 				correct_input = 1
 				print("You sit down at the end of the bar, the men slide you over a drink,")
 				####CHANGE THIS FOR OTHERS####
@@ -516,20 +519,18 @@ def bar_drink():
 					elif random_fail ==3 or random_fail ==4:
 						temp_hp = temp_hp - 5
 						print("The race begins, you pickup the pint of beer from the bar and begin to drink. half way through you start to choke,\n Your life flashes briefly before your eyes. You lose 5 hp")
-                                                bar_drink()
+						bar_drink()
 					elif random_fail ==5:
 						temp_hp = temp_hp - 10
 						gold-=10
 						print("The race begins, you pickup the pint of beer and start to drink, you feel a little wobly and fall from your stool.\n You wake up after the bartender splashes a pale of water on your face.\n You lose 10 hp and 5 gold.")
-                                                bar_drink()
+						bar_drink()
 		elif challenge == "n":
 			correct_input = 1
 			print("You politely decline the offer and move away from the drunk men. \n")
-                elif gold < 10:
-                    print("You need more gold to challenge")
-                    correct_input = 1
 		else:
 			print("You need to enter y/n \n")
+
 
                  
 def end_game():
