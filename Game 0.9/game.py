@@ -27,7 +27,7 @@ def class_decide(question):
 
         Rogue - Rogues start with basic health at 130HP and a dagger. Rogues are sneaky and lightfooted giving you the opportunity to skip some obstacles.
 
-        Cleric - Clerics have less health than the other classes but have a special ability to heal themselves. Starts with a sturdy mace!\n""")
+        Cleric - Clerics have less health than the other classes but have a special ability to heal themselves one time. Starts with a sturdy mace!\n""")
 
     reply = str(input(question + '(w/m/r/c)' + " to decide:")).lower().strip()
     #asks user what class they want to choose by asking them to input single characters 
