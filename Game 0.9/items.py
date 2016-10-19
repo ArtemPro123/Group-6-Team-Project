@@ -231,3 +231,38 @@ item_potion = {
 
     "chance": 5 
 }
+
+item_knights_armour = {
+    "id": "knights_armour",
+
+    "name": "Black Knights Armour",
+
+    "decription": 
+    """ The black knights armour is inbued with ancient magic increasing the HP of any wearer by a considerable amount! """,
+
+    "type": "Armour",
+
+    "hp": 150,
+
+    "cost": 75,
+
+}
+
+item_hunting_rifle = {
+    "id": "Rifle",
+
+    "name": "Hunting Rifle",
+
+    "description":
+    """Zoo Manager Duncans rifle. Looks pretty shabby but could cause some serious damage to the right enemies!""",
+
+    "type": "Gun",
+
+    "attack": random.randint(30, 40),
+
+    "crit": 4, 
+
+    "cost": 100, 
+
+    "chance": 4 
+}
