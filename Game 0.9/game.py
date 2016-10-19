@@ -542,7 +542,7 @@ def bar_drink():
                 if random_number >4:
                     print("The race begins, you put the pint upto your mouth and drink like you've never drunk before, beating all the other men at the bar.")
                     print("You take back your gold plus 10 from the other competitors.\n")
-                    print("A hand grabs you on the back, a stranger sits down and explains his amazement of your drinking skills, you talk some more about your quest and he agrees to acompany you.")
+                    print("A hand grabs you on the back, a stranger sits down and explains his amazement of your drinking skills, you talk some more about your quest and he agrees to give you his trust Rifle.")
                     gold+=20
                     if item_barman not in inventory: 
                         inventory.append(item_hunting_rifle)
