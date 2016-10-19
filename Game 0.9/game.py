@@ -557,7 +557,6 @@ def end_game():
 	print("Ben van Rooyen\n")
 	time.sleep(1.5)
 	print("Rest In Peace Harambe 1999-2016\n")
-	input()
 	raise SystemExit
 
 
