@@ -649,6 +649,8 @@ room_festival_grounds = {
         "max enemy": 2,
 
         "min enemy": 1,
+    
+        "enemy_present": [], 
 
         "check_item": item_isiah,
 
