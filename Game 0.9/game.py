@@ -317,7 +317,7 @@ def execute_attack(enemy_, item_id, enemies):
                             print("You've received a hit your health is now",temp_hp)
                             break
                         else: 
-                            enemyx["temp_hp"] = enemyx["temp_hp"] -  attack
+                            enemyx["temp_hp"] = enemyx["temp_hp"] -  int(attack)
                             print(enemyx["name"] + " has " + str(enemyx["temp_hp"]) + " hp")
                             temp_hp= (temp_hp - enemy_attack)
                             print("You've received a hit your health is now",temp_hp)
