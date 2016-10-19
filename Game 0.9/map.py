@@ -569,7 +569,7 @@ room_camp = {
         """The camp has been abandoned, but you can still spot remnants of salvagable gear. Along with
 some shady members.""",
 
-        "exits": {"west": "Clearing", "north": "Clearing2", "south": "Bar"},
+        "exits": {"west": "Clearing", "north": "Festival Grounds", "south": "Bar"},
 
         "items": [item_sword,item_chainmail],
 
