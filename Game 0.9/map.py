@@ -637,17 +637,17 @@ room_festival_grounds = {
 
         "exits": {"south": "Camp","west": "Cinncinati Zoo"},
 
-        "items": [item_knights_armour],
+        "items": [],
 
         "market":[],
 
         "combat": False,
 
-        "enemy": [],
+        "enemy": [enemy_kirilla_clown],
 
-        "max enemy": 0,
+        "max enemy": 2,
 
-        "min enemy": 0,
+        "min enemy": 1,
 
         "check_item": item_isiah,
 
