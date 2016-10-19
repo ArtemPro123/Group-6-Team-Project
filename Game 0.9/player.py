@@ -16,14 +16,14 @@ mage = {
 rogue = { 
     "inventory": [item_dagger, item_helping_hand],
     #"gold" = int(50),
-    "hp": int(100),
-    "temp_hp": int(100)
+    "hp": int(130),
+    "temp_hp": int(130)
     } 
 cleric = { 
     "inventory":[item_mace, item_restoration_potion],
     #"gold" = int(50),
-    "hp": int(130),
-    "temp_hp": int(130)
+    "hp": int(115),
+    "temp_hp": int(115)
     } 
 
 current_room = rooms["Home"]
