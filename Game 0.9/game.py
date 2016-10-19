@@ -69,10 +69,10 @@ def print_room_items(room):
 def print_inventory_items(items):
     global gold
     #tells the user what items they have in their inventory 
-     if len(list_of_items(items)) > 0:
+    if len(list_of_items(items)) > 0:
         print("You have " + str(list_of_items(items)) + ".") 
         print("")
-     if current_room["name"] == "General Store": #added gold amount player has
+    if current_room["name"] == "General Store": #added gold amount player has
         print("You have ", str(gold), " gold coins.")
         print("")
 
@@ -549,6 +549,7 @@ def bar_drink():
                     gold+=20
                     if item_barman not in inventory: 
                         inventory.append(item_hunting_rifle)
+                        print("You have: " + str(gold) + " Gold.") 
                 else:
                     random_fail = random.randint(1,5)
                     if random_fail ==1 or random_fail ==2:
