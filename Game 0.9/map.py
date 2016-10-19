@@ -642,7 +642,7 @@ room_festival_grounds = {
 
         "market":[],
 
-        "combat": False,
+        "combat": True,
 
         "enemy": [enemy_kirilla_clown],
 
