@@ -350,7 +350,7 @@ some shady members.""",
 
         "exits": {"west": "Clearing", "north": "Clearing2", "south": "Bar"},
 
-        "items": [],
+        "items": [item_sword],
 
         "market": [],
 
