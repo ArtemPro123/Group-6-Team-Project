@@ -233,7 +233,7 @@ item_potion = {
 }
 
 item_knights_armour = {
-    "id": "knights_armour",
+    "id": "knightsArmour",
 
     "name": "Black Knights Armour",
 
