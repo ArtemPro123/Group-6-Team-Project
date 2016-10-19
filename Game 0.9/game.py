@@ -223,8 +223,8 @@ def execute_sell(item_id):
                 print("you have " + str(gold) + " gold")
                 #same process as buy but adds half the items cost to your gold value and adds to shop instead of taking away
                 break
-     else: 
-         print("You cannot sell that")       
+    else: 
+        print("You cannot sell that")       
                      
 def execute_go(direction):
     global current_room
