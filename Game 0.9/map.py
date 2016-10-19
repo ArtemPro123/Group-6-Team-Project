@@ -771,5 +771,5 @@ rooms = {
         "Forest": room_forest,
         "Camp": room_camp,
         "Clearing": room_clearing,
-        "Clearing2": room_festival_grounds
+        "Festival Grounds": room_festival_grounds
 }
