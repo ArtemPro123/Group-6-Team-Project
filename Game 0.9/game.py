@@ -21,11 +21,11 @@ def class_decide(question):
     #declares these as global variables so you don't have to use dictionary variable names throughout the code
     print("choose a class from:" + """ 
         
-        Warrior - Warriors have increased health starting at 300HP and come equipped with a sword.
+        Warrior - Warriors have increased health starting at 200HP and come equipped with a sword.
 
-        Mage - Mages start with basic health at 250 and a powerful mage staff
+        Mage - Mages start with basic health at 150HP and a powerful mage staff
 
-        Rogue - Rogues start with basic health at 250 and a dagger. Rogues are sneaky and lightfooted giving you the opportunity to skip some obstacles.
+        Rogue - Rogues start with basic health at 130HP and a dagger. Rogues are sneaky and lightfooted giving you the opportunity to skip some obstacles.
 
         Cleric - Clerics have less health than the other classes but have a special ability to heal themselves. Starts with a sturdy mace!\n""")
 
