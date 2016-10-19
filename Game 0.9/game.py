@@ -167,10 +167,10 @@ def print_menu(exits, room_items, inv_items, room_market):
 
     if len(current_room["market"]) > 0:
         for i in inv_items:
-            if i["type"] != "Buff":
+            if i["type"] != "buff":
                 print("SELL " + str(i["id"]).upper() + " to sell " + str(i["name"]) + " for", int(i["cost"] * 0.5) ," gold coins.") 
     for i in inv_items: 
-        if i["type"] != "Buff":
+        if i["type"] != "buff":
             print("DROP " + str(i["id"]).upper() + " to drop " + str(i["name"]) + ".")    
     print("What do you want to do?")
     print("_" * 50)
@@ -215,7 +215,7 @@ def execute_sell(item_id):
     global gold 
     for item in inventory:
         if item_id == item["id"]: 
-            if item["type"] != "Buff": 
+            if item["type"] != "buff": 
                 inventory.remove(item)
                 gold = gold + int((0.5*int(item["cost"]))) 
                 current_room["market"].append(item)
@@ -276,7 +276,7 @@ def execute_take(item_id):
 def execute_drop(item_id):
     for item in inventory:
         if item_id == item["id"]:
-            if item["type"] != "Buff": 
+            if item["type"] != "buff": 
                 inventory.remove(item)
                 current_room["items"].append(item)
                 print("you have dropped " + str(item["name"])) 
