@@ -470,45 +470,50 @@ def combat_menu(inventory, enemies):
     return normalised_user_input 
     
 def combat():
-    global current_room 
-    if current_room["combat"] == True:
-        global enemies
-        # enemies = []
-        if len(current_room["enemy_present"]) < 1:
-            enemies = []
-            #enemies = current_room["enemy_present"]
-            for x in range(current_room["min enemy"], current_room["max enemy"]):
-                temp_enemy = random.choice(current_room["enemy"])
-                if temp_enemy not in current_room["enemy_present"]:
-                        current_room["enemy_present"].append(temp_enemy)
-        # enemies = current_room["enemy_present"]
+	global current_room 
+	global gold
+	if current_room["combat"] == True:
+		global enemies
+		# enemies = []
+		if len(current_room["enemy_present"]) < 1:
+			enemies = []
+			#enemies = current_room["enemy_present"]
+			for x in range(current_room["min enemy"], current_room["max enemy"]):
+				temp_enemy = random.choice(current_room["enemy"])
+				if temp_enemy not in current_room["enemy_present"]:
+						current_room["enemy_present"].append(temp_enemy)
+		# enemies = current_room["enemy_present"]
 
-        if print_enemies(current_room["enemy_present"]) == True:
-            while True:
-                print_arena(current_room["enemy_present"])
-                    
-                command = combat_menu(inventory, current_room["enemy_present"])
-                #print(command) 
-                execute_combat_command(command)
+		if print_enemies(current_room["enemy_present"]) == True:
+			while True:
+				print_arena(current_room["enemy_present"])
+					
+				command = combat_menu(inventory, current_room["enemy_present"])
+				#print(command) 
+				execute_combat_command(command)
 
-                if temp_hp <1:
-                    print("You have lost!")
-                    raise SystemExit
+				if temp_hp <1:
+					print("You have lost!")
+					raise SystemExit
 
-                for enemy_ in current_room["enemy_present"]:
-                    if enemy_["temp_hp"] < 1:
-                        print("You killed 1 " + enemy_["name"])
-                        enemy_["temp_hp"] = enemy_["hp"]
-                        for item in enemy_["drop"]: 
-                            if random.randint(0, item["chance"]) > 2: 
-                                current_room["items"].append(item)
-                                print("The enemy dropped a " + item["name"])
-                        current_room["enemy_present"].remove(enemy_)
-                if len(current_room["enemy_present"]) == 0:
-                    current_room["combat"] = False
-                    break
-    else:
-        return None
+				for enemy_ in current_room["enemy_present"]:
+					if enemy_["temp_hp"] < 1:
+						print("You killed 1 " + enemy_["name"])
+						enemy_["temp_hp"] = enemy_["hp"]
+						for item in enemy_["drop"]: 
+							if random.randint(0, item["chance"]) > 2: 
+								if item["type"] in type_attack: 
+									gold = (item["cost"]*0.5) + gold
+									print("you gained " + str((item["cost"]*0.5)) + " Gold")  
+								else: 
+									inventory.append(item)
+								print("The enemy dropped a " + item["name"])
+						current_room["enemy_present"].remove(enemy_)
+				if len(current_room["enemy_present"]) == 0:
+					current_room["combat"] = False
+					break
+	else:
+		return None
 
 def activity():
     global current_room
