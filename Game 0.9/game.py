@@ -19,7 +19,16 @@ def class_decide(question):
     global temp_hp
     global class_name
     #declares these as global variables so you don't have to use dictionary variable names throughout the code
-    print("choose a class from: Warrior, Mage, Rogue, Cleric")
+    print("choose a class from:" + """ 
+        
+        Warrior - Warriors have increased health starting at 300HP and come equipped with a sword.
+
+        Mage - Mages start with basic health at 250 and a powerful mage staff
+
+        Rogue - Rogues start with basic health at 250 and a dagger. Rogues are sneaky and lightfooted giving you the opportunity to skip some obstacles.
+
+        Cleric - Clerics have less health than the other classes but have a special ability to heal themselves. Starts with a sturdy mace!\n""")
+
     reply = str(input(question + '(w/m/r/c)' + " to decide:")).lower().strip()
     #asks user what class they want to choose by asking them to input single characters 
     if len(reply) < 1:
@@ -553,7 +562,12 @@ def main():
 
 if __name__ == "__main__":
 	ascii()
-	input("Hit enter to start!")
+	input("""
+
+        Welcome to Korilla Warfare! You play the hero Amanda O'Donohuge a heroin from the land of cincinnati in the year of 500AD.
+            Times are hard and the land is ruled by a ruthless being who resids in the Zoo!
+
+                                                Hit enter to start!""")
 	main()
     
 
