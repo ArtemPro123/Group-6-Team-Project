@@ -589,7 +589,7 @@ def end_game():
     time.sleep(1.5)
     print("Nojus Lenciauskas -- Visual Artist/Programmer\n")
     time.sleep(1.5)
-    print("Ben van Rooyen -- Error missing-input-response\n")
+    print("Ben van Rooyen -- 404 Page Not Found\n")
     time.sleep(1.5)
     print("Rest In Peace Harambe 1999-2016\n")
     raise SystemExit
