@@ -486,7 +486,7 @@ def bar_drink():
 	global inventory
 	challenge = ""
 	correct_input = 0
-	print("Sitting along the bar three strangers reside. They notice your arrival and hail you over. The men are quite clearly drunk and challenge you to drink a pint faster then them game hoping your pockets might fund their next pint \n")
+	print("Sitting along the bar, three strangers reside. They notice your arrival and hail you over. The men are quite clearly drunk and challenge you to drink a pint faster then them, hoping your pockets might fund their next pint \n")
 	print("You have: " + str(gold) + " Gold.") 
 	while correct_input != 1:
 		challenge = input("Would you like to accept their challenge? (Costs 10 coins), (Type y/n) \n").lower()
@@ -506,7 +506,7 @@ def bar_drink():
 				if random_number >4:
 					print("The race begins, you put the pint upto your mouth and drink like you've never drunk before, beating all the other men at the bar.")
 					print("You take back your gold plus 10 from the other competitors.\n")
-					print("A hand grabs you on the back, a stranger sits down and explains his amazement of your drinking skills, you talk some more about your quest and he agrees to acompany you.")
+					print("A hand grabs you on the back, a stranger sits down and explains his amazement of your drinking skills, you talk some more about your quest and he agrees to give you his trusty old rifle.")
 					gold+=20
 					if item_barman not in inventory: 
 						inventory.append(item_hunting_rifle)
