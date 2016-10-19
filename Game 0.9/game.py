@@ -317,7 +317,7 @@ def execute_attack(enemy_, item_id, enemies):
                             print("You've received a hit your health is now",temp_hp)
                             break
                         else: 
-                            enemyx["temp_hp"] = enemyx["temp_hp"] -  int(attack)
+                            enemyx["temp_hp"] = enemyx["temp_hp"] -  attack
                             print(enemyx["name"] + " has " + str(enemyx["temp_hp"]) + " hp")
                             temp_hp= (temp_hp - enemy_attack)
                             print("You've received a hit your health is now",temp_hp)
@@ -571,25 +571,25 @@ def bar_drink():
                  
 def end_game():
 	for i in range(1,51):
-            print("\n")
-            time.sleep(0.2)
+        print("\n")
+        time.sleep(0.2)
 	ascii()
 	time.sleep(2)
-	print("\nDeeon Roy -- Executive Programmer\n")
+	print("\nDeeon Roy\n")
 	time.sleep(1.5)
-	print("Ben Rant -- Programmer\n")
+	print("Ben Rant\n")
 	time.sleep(1.5)
-	print("Oliver Storey-Soung -- Programmer\n")
+	print("Oliver Storey-Soung\n")
 	time.sleep(1.5)
-	print("Artem Protasavytsky -- Programmer\n")
+	print("Artem Protasavytsky\n")
 	time.sleep(1.5)
-	print("Luke Jones -- Programmer\n")
+	print("Luke Jones\n")
 	time.sleep(1.5)
-	print("Austen Wells -- Beta Tester\n")
+	print("Austen Wells\n")
 	time.sleep(1.5)
-	print("Nojus Lenciauskas -- Visual Artist/Programmer\n")
+	print("Nojus Lenciauskas\n")
 	time.sleep(1.5)
-	print("Ben van Rooyen -- Error missing-input-response\n")
+	print("Ben van Rooyen\n")
 	time.sleep(1.5)
 	print("Rest In Peace Harambe 1999-2016\n")
 	raise SystemExit
