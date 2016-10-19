@@ -126,3 +126,21 @@ enemy_harambe = {
     "drop": [item_mage_staff, item_bandage]
 
 } 
+
+enemy_kirilla_clown = {
+    "id": "clown",
+
+    "name": "Kirilla Clown",
+
+    "weak": ["Fire", "Slash"],
+
+    "resist": ["Slash", "Bludgeon", "Gun"],
+
+    "attack": random.randint(20, 40),
+
+    "hp": 100,
+
+    "temp_hp": 100,
+
+    "drop": [item_buff_potion]
+    }
