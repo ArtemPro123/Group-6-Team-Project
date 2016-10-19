@@ -240,13 +240,12 @@ def execute_take(item_id):
                 if item["type"] in type_attack:
                     gold = gold + (0.5 * item["cost"])
                     print("you have gained " + str(0.5*item["cost"]) + " gold from " + str(item["name"]))
-		    print("you have " + gold + " gold." 
-			
+                    print("you have " + gold + " gold.")
             else: 
                 inventory.append(item)
                 print("you have taken " + str(item["name"]))
             current_room["items"].remove(item) 
-            
+        
             break   
         else: 
             print("You cannot take that.") 
@@ -557,3 +556,4 @@ if __name__ == "__main__":
 	input("Hit enter to start!")
 	main()
     
+
