@@ -163,9 +163,11 @@ def print_menu(exits, room_items, inv_items, room_market):
 
     if len(current_room["market"]) > 0:
         for i in inv_items:
-            print("SELL " + str(i["id"]).upper() + " to sell " + str(i["name"]) + " for", int(i["cost"] * 0.5) ," gold coins.") 
+            if i["type"] != "Buff":
+                print("SELL " + str(i["id"]).upper() + " to sell " + str(i["name"]) + " for", int(i["cost"] * 0.5) ," gold coins.") 
     for i in inv_items: 
-        print("DROP " + str(i["id"]).upper() + " to drop " + str(i["name"]) + ".")    
+        if i["type"] != "Buff":
+            print("DROP " + str(i["id"]).upper() + " to drop " + str(i["name"]) + ".")    
     print("What do you want to do?")
     print("_" * 50)
 
@@ -209,15 +211,16 @@ def execute_sell(item_id):
     global gold 
     for item in inventory:
         if item_id == item["id"]: 
-            inventory.remove(item)
-            gold = gold + int((0.5*int(item["cost"]))) 
-            current_room["market"].append(item)
-            print("you have sold " + str(item["name"]) + " you have gained, " + str(int(0.5*item["cost"]))) 
-            print("you have " + str(gold) + " gold")
+            if item["type"] != "Buff": 
+                inventory.remove(item)
+                gold = gold + int((0.5*int(item["cost"]))) 
+                current_room["market"].append(item)
+                print("you have sold " + str(item["name"]) + " you have gained, " + str(int(0.5*item["cost"]))) 
+                print("you have " + str(gold) + " gold")
                 #same process as buy but adds half the items cost to your gold value and adds to shop instead of taking away
-            break
+                break
         else: 
-            print("You cannot sell that")        
+            print("You cannot sell that")       
                      
 def execute_go(direction):
     global current_room
@@ -268,13 +271,14 @@ def execute_take(item_id):
 
 def execute_drop(item_id):
     for item in inventory:
-        if item_id == item["id"]: 
-            inventory.remove(item)
-            current_room["items"].append(item)
-            print("you have dropped " + str(item["name"])) 
-            break
+        if item_id == item["id"]:
+            if item["type"] != "Buff": 
+                inventory.remove(item)
+                current_room["items"].append(item)
+                print("you have dropped " + str(item["name"])) 
+                break
     if item_id != item["id"]: 
-        print("You cannot drop that")        
+        print("You cannot drop that")           
 
 def execute_attack(enemy_, item_id, enemies):
     #global enemies 
@@ -486,7 +490,7 @@ def bar_drink():
 	global inventory
 	challenge = ""
 	correct_input = 0
-	print("Sitting along the bar, three strangers reside. They notice your arrival and hail you over. The men are quite clearly drunk and challenge you to drink a pint faster then them, hoping your pockets might fund their next pint \n")
+	print("Sitting along the bar three strangers reside. They notice your arrival and hail you over. The men are quite clearly drunk and challenge you to drink a pint faster then them game hoping your pockets might fund their next pint \n")
 	print("You have: " + str(gold) + " Gold.") 
 	while correct_input != 1:
 		challenge = input("Would you like to accept their challenge? (Costs 10 coins), (Type y/n) \n").lower()
@@ -506,7 +510,7 @@ def bar_drink():
 				if random_number >4:
 					print("The race begins, you put the pint upto your mouth and drink like you've never drunk before, beating all the other men at the bar.")
 					print("You take back your gold plus 10 from the other competitors.\n")
-					print("A hand grabs you on the back, a stranger sits down and explains his amazement of your drinking skills, you talk some more about your quest and he agrees to give you his trusty old rifle.")
+					print("A hand grabs you on the back, a stranger sits down and explains his amazement of your drinking skills, you talk some more about your quest and he agrees to acompany you.")
 					gold+=20
 					if item_barman not in inventory: 
 						inventory.append(item_hunting_rifle)
