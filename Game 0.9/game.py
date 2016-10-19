@@ -585,7 +585,7 @@ def end_game():
     time.sleep(1.5)
     print("Luke Jones -- Programmer\n")
     time.sleep(1.5)
-    print("Austen Wells -- Beta Tester\n")
+    print("Austen Wells -- Beta Tester/Programmer\n")
     time.sleep(1.5)
     print("Nojus Lenciauskas -- Visual Artist/Programmer\n")
     time.sleep(1.5)
