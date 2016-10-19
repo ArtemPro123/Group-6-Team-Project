@@ -294,6 +294,7 @@ def execute_attack(enemy_, item_id, enemies):
     for item in inventory:
         if item_id == item["id"]:
             if str(item["type"]) in type_attack:
+                attack = item["attack"]
                 for enemyx in enemies:
                     if enemy_ == enemyx["id"]: 
                         if item_buff_potion in inventory: 
