@@ -696,7 +696,8 @@ room_clearing = {
         "name": "Clearing",
 
         "description":
-        """ clearing""",
+        """ You come across an old part of the forest which has been harvested for wood and it now stands barren. There are potentialy
+           some usefull items lying around. From here you can either go to the FOREST or to the CAMP.""",
 
         "exits": {"west": "Forest", "east": "Camp"},
 
