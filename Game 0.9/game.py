@@ -467,33 +467,34 @@ def bar_drink():
 	while correct_input != 1:
 		challenge = input("Would you like to accept their challenge? (Costs 10 coins), (Type y/n) \n").lower()
 		if challenge == "y":
-			correct_input = 1
-			print("You sit down at the end of the bar, the men slide you over a drink,")
-			####CHANGE THIS FOR OTHERS####
-			gold-=10
-			print("You hand over 10 gold and begin to drink.")
-			random_number = random.randint(1,7)
-			if class_name == "warrior":
-				random_number+1
-			if random_number >4:
-				print("The race begins, you put the pint upto your mouth and drink like you've never drunk before, beating all the other men at the bar.")
-				print("You take back your gold plus 10 from the other competitors.\n")
-				print("A hand grabs you on the back, a stranger sits down and explains his amazement of your drinking skills, you talk some more about your quest and he agrees to acompany you.")
-				gold+=20
-				if item_barman not in inventory: 
-					inventory.append(item_barman)
-			else:
-				random_fail = random.randint(1,5)
-				if random_fail ==1 or random_fail ==2:
-					print("The race begins, you pickup the pint of beer and bring it to your mouth, but not before,\n your hand slips and the glass shatters cutting your leg, you feel damaged. You lose 5 hp\n")
-					temp_hp = temp_hp - 5
-				elif random_fail ==3 or random_fail ==4:
-					temp_hp = temp_hp - 5
-					print("The race begins, you pickup the pint of beer from the bar and begin to drink. half way through you start to choke,\n Your life flashes briefly before your eyes. You lose 5 hp")
-				elif random_fail ==5:
-					temp_hp = temp_hp - 10
-					gold-=10
-					print("The race begins, you pickup the pint of beer and start to drink, you feel a little wobly and fall from your stool.\n You wake up after the bartender splashes a pale of water on your face.\n You lose 10 hp and 5 gold.")
+			if gold > 9: 
+				correct_input = 1
+				print("You sit down at the end of the bar, the men slide you over a drink,")
+				####CHANGE THIS FOR OTHERS####
+				gold-=10
+				print("You hand over 10 gold and begin to drink.")
+				random_number = random.randint(1,7)
+				if class_name == "warrior":
+					random_number+1
+				if random_number >4:
+					print("The race begins, you put the pint upto your mouth and drink like you've never drunk before, beating all the other men at the bar.")
+					print("You take back your gold plus 10 from the other competitors.\n")
+					print("A hand grabs you on the back, a stranger sits down and explains his amazement of your drinking skills, you talk some more about your quest and he agrees to acompany you.")
+					gold+=20
+					if item_barman not in inventory: 
+						inventory.append(item_hunting_rifle)
+				else:
+					random_fail = random.randint(1,5)
+					if random_fail ==1 or random_fail ==2:
+						print("The race begins, you pickup the pint of beer and bring it to your mouth, but not before,\n your hand slips and the glass shatters cutting your leg, you feel damaged. You lose 5 hp\n")
+						temp_hp = temp_hp - 5
+					elif random_fail ==3 or random_fail ==4:
+						temp_hp = temp_hp - 5
+						print("The race begins, you pickup the pint of beer from the bar and begin to drink. half way through you start to choke,\n Your life flashes briefly before your eyes. You lose 5 hp")
+					elif random_fail ==5:
+						temp_hp = temp_hp - 10
+						gold-=10
+						print("The race begins, you pickup the pint of beer and start to drink, you feel a little wobly and fall from your stool.\n You wake up after the bartender splashes a pale of water on your face.\n You lose 10 hp and 5 gold.")
 		elif challenge == "n":
 			correct_input = 1
 			print("You politely decline the offer and move away from the drunk men. \n")
