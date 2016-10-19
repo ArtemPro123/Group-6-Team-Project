@@ -97,7 +97,7 @@ def print_enemies(enemies):
         x.append(enemy_["name"])
         #adds the enemies that are in the list so we print it off as a nice string. 
     if len(inventory)==0:
-    	#MAKE SURE ATTACK ITEM NOT JUST ANY ITEM. 
+        #MAKE SURE ATTACK ITEM NOT JUST ANY ITEM. 
         current_room = prev_room
         print("There are enemies ahead, arm yourself!")
         print_room(current_room)
@@ -325,7 +325,7 @@ def execute_attack(enemy_, item_id, enemies):
                 #these if statements above check the damage type and compare to whether the enemy is weak to it and
             else:
                 print("you cannot attack with that!") 
-            	   #does damage accordingly, 2x 0.5x or normal damage 
+                   #does damage accordingly, 2x 0.5x or normal damage 
 
 def execute_use(item_id):
     global hp 
@@ -466,143 +466,143 @@ def combat_menu(inventory, enemies):
     return normalised_user_input 
     
 def combat():
-	global current_room 
-	if current_room["combat"] == True:
-		global enemies
-		# enemies = []
-		if len(current_room["enemy_present"]) < 1:
-			enemies = []
-        	#enemies = current_room["enemy_present"]
-			for x in range(current_room["min enemy"], current_room["max enemy"]):
-				temp_enemy = random.choice(current_room["enemy"])
-				if temp_enemy not in current_room["enemy_present"]:
-						current_room["enemy_present"].append(temp_enemy)
-		# enemies = current_room["enemy_present"]
+    global current_room 
+    if current_room["combat"] == True:
+        global enemies
+        # enemies = []
+        if len(current_room["enemy_present"]) < 1:
+            enemies = []
+            #enemies = current_room["enemy_present"]
+            for x in range(current_room["min enemy"], current_room["max enemy"]):
+                temp_enemy = random.choice(current_room["enemy"])
+                if temp_enemy not in current_room["enemy_present"]:
+                        current_room["enemy_present"].append(temp_enemy)
+        # enemies = current_room["enemy_present"]
 
-		if print_enemies(current_room["enemy_present"]) == True:
-			while True:
-				print_arena(current_room["enemy_present"])
-	                
-				command = combat_menu(inventory, current_room["enemy_present"])
-	            #print(command) 
-				execute_combat_command(command)
+        if print_enemies(current_room["enemy_present"]) == True:
+            while True:
+                print_arena(current_room["enemy_present"])
+                    
+                command = combat_menu(inventory, current_room["enemy_present"])
+                #print(command) 
+                execute_combat_command(command)
 
-				if temp_hp <1:
-					print("You have lost!")
-					raise SystemExit
+                if temp_hp <1:
+                    print("You have lost!")
+                    raise SystemExit
 
-				for enemy_ in current_room["enemy_present"]:
-					if enemy_["temp_hp"] < 1:
-						print("You killed 1 " + enemy_["name"])
-						enemy_["temp_hp"] = enemy_["hp"]
-						for item in enemy_["drop"]: 
-							if random.randint(0, item["chance"]) > 2: 
-								current_room["items"].append(item)
-								print("The enemy dropped a " + item["name"])
-						current_room["enemy_present"].remove(enemy_)
-				if len(current_room["enemy_present"]) == 0:
-					current_room["combat"] = False
-					break
-	else:
-		return None
+                for enemy_ in current_room["enemy_present"]:
+                    if enemy_["temp_hp"] < 1:
+                        print("You killed 1 " + enemy_["name"])
+                        enemy_["temp_hp"] = enemy_["hp"]
+                        for item in enemy_["drop"]: 
+                            if random.randint(0, item["chance"]) > 2: 
+                                current_room["items"].append(item)
+                                print("The enemy dropped a " + item["name"])
+                        current_room["enemy_present"].remove(enemy_)
+                if len(current_room["enemy_present"]) == 0:
+                    current_room["combat"] = False
+                    break
+    else:
+        return None
 
 def activity():
-	global current_room
-	if current_room["name"] == "Bar":
-		bar_drink()
-	elif current_room["name"] == "Clearing2":
-		barfight()
-		##CHANGE THIS##
-		##SPACE FOR MORE##
+    global current_room
+    if current_room["name"] == "Bar":
+        bar_drink()
+    elif current_room["name"] == "Clearing2":
+        barfight()
+        ##CHANGE THIS##
+        ##SPACE FOR MORE##
 
 def bar_drink():
-	global temp_hp
-	global gold
-	global class_name
-	global inventory
-	challenge = ""
-	correct_input = 0
-	print("Sitting along the bar three strangers reside. They notice your arrival and hail you over. The men are quite clearly drunk and challenge you to drink a pint faster then them game hoping your pockets might fund their next pint \n")
-	print("You have: " + str(gold) + " Gold.") 
-	while correct_input != 1:
-		challenge = input("Would you like to accept their challenge? (Costs 10 coins), (Type y/n) \n").lower()
-		if challenge == "y":
-			if gold < 10:
-				print("You need more gold to challenge")
-				correct_input = 1
-			else: 
-				correct_input = 1
-				print("You sit down at the end of the bar, the men slide you over a drink,")
-				####CHANGE THIS FOR OTHERS####
-				gold-=10
-				print("You hand over 10 gold and begin to drink.")
-				random_number = random.randint(1,7)
-				if class_name == "warrior":
-					random_number+1
-				if random_number >4:
-					print("The race begins, you put the pint upto your mouth and drink like you've never drunk before, beating all the other men at the bar.")
-					print("You take back your gold plus 10 from the other competitors.\n")
-					print("A hand grabs you on the back, a stranger sits down and explains his amazement of your drinking skills, you talk some more about your quest and he agrees to acompany you.")
-					gold+=20
-					if item_barman not in inventory: 
-						inventory.append(item_hunting_rifle)
-				else:
-					random_fail = random.randint(1,5)
-					if random_fail ==1 or random_fail ==2:
-						print("The race begins, you pickup the pint of beer and bring it to your mouth, but not before,\n your hand slips and the glass shatters cutting your leg, you feel damaged. You lose 5 hp\n")
-						temp_hp = temp_hp - 5
-						bar_drink()
-					elif random_fail ==3 or random_fail ==4:
-						temp_hp = temp_hp - 5
-						print("The race begins, you pickup the pint of beer from the bar and begin to drink. half way through you start to choke,\n Your life flashes briefly before your eyes. You lose 5 hp")
-						bar_drink()
-					elif random_fail ==5:
-						temp_hp = temp_hp - 10
-						gold-=10
-						print("The race begins, you pickup the pint of beer and start to drink, you feel a little wobly and fall from your stool.\n You wake up after the bartender splashes a pale of water on your face.\n You lose 10 hp and 10 gold.")
-						bar_drink()
-		elif challenge == "n":
-			correct_input = 1
-			print("You politely decline the offer and move away from the drunk men. \n")
-		else:
-			print("You need to enter y/n \n")
+    global temp_hp
+    global gold
+    global class_name
+    global inventory
+    challenge = ""
+    correct_input = 0
+    print("Sitting along the bar three strangers reside. They notice your arrival and hail you over. The men are quite clearly drunk and challenge you to drink a pint faster then them game hoping your pockets might fund their next pint \n")
+    print("You have: " + str(gold) + " Gold.") 
+    while correct_input != 1:
+        challenge = input("Would you like to accept their challenge? (Costs 10 coins), (Type y/n) \n").lower()
+        if challenge == "y":
+            if gold < 10:
+                print("You need more gold to challenge")
+                correct_input = 1
+            else: 
+                correct_input = 1
+                print("You sit down at the end of the bar, the men slide you over a drink,")
+                ####CHANGE THIS FOR OTHERS####
+                gold-=10
+                print("You hand over 10 gold and begin to drink.")
+                random_number = random.randint(1,7)
+                if class_name == "warrior":
+                    random_number+1
+                if random_number >4:
+                    print("The race begins, you put the pint upto your mouth and drink like you've never drunk before, beating all the other men at the bar.")
+                    print("You take back your gold plus 10 from the other competitors.\n")
+                    print("A hand grabs you on the back, a stranger sits down and explains his amazement of your drinking skills, you talk some more about your quest and he agrees to acompany you.")
+                    gold+=20
+                    if item_barman not in inventory: 
+                        inventory.append(item_hunting_rifle)
+                else:
+                    random_fail = random.randint(1,5)
+                    if random_fail ==1 or random_fail ==2:
+                        print("The race begins, you pickup the pint of beer and bring it to your mouth, but not before,\n your hand slips and the glass shatters cutting your leg, you feel damaged. You lose 5 hp\n")
+                        temp_hp = temp_hp - 5
+                        bar_drink()
+                    elif random_fail ==3 or random_fail ==4:
+                        temp_hp = temp_hp - 5
+                        print("The race begins, you pickup the pint of beer from the bar and begin to drink. half way through you start to choke,\n Your life flashes briefly before your eyes. You lose 5 hp")
+                        bar_drink()
+                    elif random_fail ==5:
+                        temp_hp = temp_hp - 10
+                        gold-=10
+                        print("The race begins, you pickup the pint of beer and start to drink, you feel a little wobly and fall from your stool.\n You wake up after the bartender splashes a pale of water on your face.\n You lose 10 hp and 10 gold.")
+                        bar_drink()
+        elif challenge == "n":
+            correct_input = 1
+            print("You politely decline the offer and move away from the drunk men. \n")
+        else:
+            print("You need to enter y/n \n")
 
 
                  
 def end_game():
-	for i in range(1,51):
-        print("\n")
-        time.sleep(0.2)
-	ascii()
-	time.sleep(2)
-	print("\nDeeon Roy\n")
-	time.sleep(1.5)
-	print("Ben Rant\n")
-	time.sleep(1.5)
-	print("Oliver Storey-Soung\n")
-	time.sleep(1.5)
-	print("Artem Protasavytsky\n")
-	time.sleep(1.5)
-	print("Luke Jones\n")
-	time.sleep(1.5)
-	print("Austen Wells\n")
-	time.sleep(1.5)
-	print("Nojus Lenciauskas\n")
-	time.sleep(1.5)
-	print("Ben van Rooyen\n")
-	time.sleep(1.5)
-	print("Rest In Peace Harambe 1999-2016\n")
-	raise SystemExit
+    for i in range(1,51):
+            print("\n")
+            time.sleep(0.2)
+    ascii()
+    time.sleep(2)
+    print("\nDeeon Roy -- Executive Programmer\n")
+    time.sleep(1.5)
+    print("Ben Rant -- Programmer\n")
+    time.sleep(1.5)
+    print("Oliver Storey-Soung -- Programmer\n")
+    time.sleep(1.5)
+    print("Artem Protasavytsky -- Programmer\n")
+    time.sleep(1.5)
+    print("Luke Jones -- Programmer\n")
+    time.sleep(1.5)
+    print("Austen Wells -- Beta Tester\n")
+    time.sleep(1.5)
+    print("Nojus Lenciauskas -- Visual Artist/Programmer\n")
+    time.sleep(1.5)
+    print("Ben van Rooyen -- Error missing-input-response\n")
+    time.sleep(1.5)
+    print("Rest In Peace Harambe 1999-2016\n")
+    raise SystemExit
 
 
     
 def ascii():
-	print(" _  __          _ _ _                             __                ")
-	print("| |/ /         (_) | |                           / _|               ")
-	print("| ' / ___  _ __ _| | | __ _  __      ____ _ _ __| |_ __ _ _ __ ___  ")
-	print("|  < / _ \| '__| | | |/ _` | \ \ /\ / / _` | '__|  _/ _` | '__/ _ \ ")
-	print("| . \ (_) | |  | | | | (_| |  \ V  V / (_| | |  | || (_| | | |  __/ ")
-	print("|_|\_\___/|_|  |_|_|_|\__,_|   \_/\_/ \__,_|_|  |_| \__,_|_|  \___| ")       
+    print(" _  __          _ _ _                             __                ")
+    print("| |/ /         (_) | |                           / _|               ")
+    print("| ' / ___  _ __ _| | | __ _  __      ____ _ _ __| |_ __ _ _ __ ___  ")
+    print("|  < / _ \| '__| | | |/ _` | \ \ /\ / / _` | '__|  _/ _` | '__/ _ \ ")
+    print("| . \ (_) | |  | | | | (_| |  \ V  V / (_| | |  | || (_| | | |  __/ ")
+    print("|_|\_\___/|_|  |_|_|_|\__,_|   \_/\_/ \__,_|_|  |_| \__,_|_|  \___| ")       
         
 # This is the entry point of our program
 def main():
@@ -623,7 +623,7 @@ def main():
         if len(current_room["activity"]) > 1:
             activity()
         if current_room["name"] == "Harambe's Pen":
-        	end_game() 
+            end_game() 
         # Show the menu with possible actions and ask the player
         command = menu(current_room["exits"], current_room["items"], inventory, current_room["market"])
 
@@ -631,13 +631,13 @@ def main():
         execute_command(command)
 
 if __name__ == "__main__":
-	ascii()
-	input("""
+    ascii()
+    input("""
 
         Welcome to Korilla Warfare! You play the hero Amanda O'Donohuge a heroin from the land of cincinnati in the year of 500AD.
             Times are hard and the land is ruled by a ruthless being who resids in the Zoo!
 
                                                 Hit enter to start!""")
-	main()
+    main()
     
 
