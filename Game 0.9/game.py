@@ -540,10 +540,10 @@ def bar_drink():
                 ####CHANGE THIS FOR OTHERS####
                 gold-=10
                 print("You hand over 10 gold and begin to drink.")
-                random_number = random.randint(1,7)
+                random_number = random.randint(1,10)
                 if class_name == "warrior":
                     random_number+1
-                if random_number >4:
+                if random_number >8:
                     print("The race begins, you put the pint upto your mouth and drink like you've never drunk before, beating all the other men at the bar.")
                     print("You take back your gold plus 10 from the other competitors.\n")
                     print("A hand grabs you on the back, a stranger sits down and explains his amazement of your drinking skills, you talk some more about your quest and he agrees to give you his trust Rifle.")
