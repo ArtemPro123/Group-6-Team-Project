@@ -566,7 +566,7 @@ room_camp = {
         "name": "Camp",
 
         "description":
-        """The camp has been burnt to a crisp but you can still spot remnants of salvagable gear. Along with
+        """The camp has been abandoned, but you can still spot remnants of salvagable gear. Along with
 some shady members.""",
 
         "exits": {"west": "Clearing", "north": "Clearing2", "south": "Bar"},
@@ -649,8 +649,6 @@ room_festival_grounds = {
         "max enemy": 2,
 
         "min enemy": 1,
-    
-        "enemy_present": [], 
 
         "check_item": item_isiah,
 
