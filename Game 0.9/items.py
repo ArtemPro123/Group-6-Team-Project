@@ -266,3 +266,18 @@ item_hunting_rifle = {
 
     "chance": 4 
 }
+
+item_buff_potion = {
+    "id": "buff",
+
+    "name": "Crit Potion",
+
+    "description":
+    """Crit chance increase!""",
+
+    "type": "buff",
+
+    "cost": 0, 
+
+    "chance": 1000
+    } 
