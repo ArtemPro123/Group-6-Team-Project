@@ -523,7 +523,7 @@ def bar_drink():
 					elif random_fail ==5:
 						temp_hp = temp_hp - 10
 						gold-=10
-						print("The race begins, you pickup the pint of beer and start to drink, you feel a little wobly and fall from your stool.\n You wake up after the bartender splashes a pale of water on your face.\n You lose 10 hp and 5 gold.")
+						print("The race begins, you pickup the pint of beer and start to drink, you feel a little wobly and fall from your stool.\n You wake up after the bartender splashes a pale of water on your face.\n You lose 10 hp and 10 gold.")
 						bar_drink()
 		elif challenge == "n":
 			correct_input = 1
