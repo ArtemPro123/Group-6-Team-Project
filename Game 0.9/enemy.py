@@ -8,7 +8,7 @@ enemy_rogue_knight = {
 
     "weak": ["Fire", "Bludgeon"],
 
-    "resist": ["Slash", "Stab"],
+    "resist": ["Slash", "Stab", "Gun"],
 
     "attack": random.randint(15, 30),
 
@@ -26,7 +26,7 @@ enemy_castle_mage = {
 
     "weak": ["Slash", "Stab", "Bludgeon"],
 
-    "resist": ["Fire"],
+    "resist": ["Fire", "Stab", "Gun"],
 
     "attack": random.randint(20, 70),
 
@@ -43,7 +43,7 @@ enemy_kobold = {
 
     "weak": ["Slash, Stab, Bludgeon"],
 
-    "resist": ["Fire"],
+    "resist": ["Fire", "Gun"],
 
     "attack": random.randint(5, 15),
 
@@ -61,7 +61,7 @@ enemy_bandit = {
 
     "weak": ["Fire"],
 
-    "resist": ["Slash"],
+    "resist": ["Slash", "Stab", "Gun"],
 
     "attack": random.randint(20,40),
 
@@ -77,9 +77,9 @@ enemy_rufian = {
 
     "name": "Rufian",
 
-    "weak": ["Fire"],
+    "weak": ["Fire", "Bludgeon"],
 
-    "resist": ["Slash"],
+    "resist": ["Slash", "Stab", "Gun"],
 
     "attack": random.randint(20, 30),
 
@@ -97,7 +97,7 @@ enemy_harambe_warrior = {
 
     "weak": ["Slash", "Stab", "Bludgeon"],
 
-    "resist": ["Fire"],
+    "resist": ["Fire", "Gun"],
 
     "attack": random.randint(5, 50),
 
@@ -113,7 +113,7 @@ enemy_harambe = {
 
     "name": "Harambe",
 
-    "weak": [],
+    "weak": ["Gun"],
 
     "resist": [],
 
