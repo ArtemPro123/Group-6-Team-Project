@@ -291,12 +291,16 @@ def execute_attack(enemy_, item_id, enemies):
         if item_id == item["id"]:
             if str(item["type"]) in type_attack:
                 for enemyx in enemies:
-                    if enemy_ == enemyx["id"]:
-                        if random.randint(0, item["crit"]) > 2:
-                        	attack = item["attack"]*2
-                        	print("You Crit!")
+                    if enemy_ == enemyx["id"]: 
+                        if item_buff_potion in inventory: 
+                            if random.randint(0, item["crit"]) > 1: 
+                                attack = item["attack"]*2 
+                                print("You Crit!")
+                        elif random.randint(0, item["crit"]) > 2:
+                            attack = item["attack"]*2
+                            print("You Crit!")
                         else: 
-                        	attack = item["attack"]
+                            attack = item["attack"]
                         if item["type"] in enemyx["weak"]:
                             enemyx["temp_hp"] = enemyx["temp_hp"] - int((2 * attack))
                             print("that was super effective!")
