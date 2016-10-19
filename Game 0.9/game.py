@@ -542,6 +542,9 @@ def bar_drink():
 
                  
 def end_game():
+	for i in range(1,51):
+            print("\n")
+            time.sleep(0.2)
 	ascii()
 	time.sleep(2)
 	print("\nDeeon Roy\n")
