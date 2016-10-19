@@ -22,7 +22,9 @@ def class_decide(question):
     print("choose a class from: Warrior, Mage, Rogue, Cleric")
     reply = str(input(question + '(w/m/r/c)' + " to decide:")).lower().strip()
     #asks user what class they want to choose by asking them to input single characters 
-    if reply[0] == 'w':
+    if len(reply) < 1:
+        class_decide("please enter ")
+    elif reply[0] == 'w':
         inventory = warrior["inventory"] 
         hp = warrior["hp"]
         temp_hp = warrior["temp_hp"]
@@ -43,8 +45,6 @@ def class_decide(question):
         temp_hp = cleric["temp_hp"]
         class_name = "cleric"
         #sets the global variables to equal those defined in the player module
-    else:
-        class_decide("please enter ") 
         
 def list_of_items(items):
     return ", ".join(i["name"] for i in items) 
