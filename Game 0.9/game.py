@@ -53,6 +53,8 @@ def class_decide(question):
         hp = cleric["hp"]
         temp_hp = cleric["temp_hp"]
         class_name = "cleric"
+    else: 
+        class_decide("please enter ")
         #sets the global variables to equal those defined in the player module
         
 def list_of_items(items):
