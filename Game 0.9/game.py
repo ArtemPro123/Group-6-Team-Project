@@ -356,31 +356,29 @@ def execute_wear(item_id):
             else:
                 print("You cannot wear that.")  
 
-		def execute_see(maporcompass):
-		    if maporcompass == "map":
-			print("""\
-			╔═════════════════════════════════════════╗
-			║                                         ║
-			║ HARAMBE                                 ║
-			║     ║                                   ║
-			║     ║                                   ║
-			║    ZOO════════════════FESTIVAL GROUNDS  ║
-			║     ║                               ║   ║
-			║     ║                               ║   ║
-			║   CASTLE                            ║   ║
-			║     ║                               ║   ║
-			║     ║                               ║   ║
-			║   BRDGE═══FOREST═════CLEARING═════CAMP  ║
-			║     ║        ║                      ║   ║
-			║     ║        ║                      ║   ║
-			║    SHOP════VILAGE══════════════════BAR  ║
-			║                                         ║
-			╚═════════════════════════════════════════╝
-			""")
-
-		    else:
-			print("You cannot see that.")
-
+def execute_see(maporcompass):
+    if maporcompass == "map":
+        print("""\
+        ╔═════════════════════════════════════════╗
+        ║                                         ║
+        ║ HARAMBE                                 ║
+        ║     ║                                   ║
+        ║     ║                                   ║
+        ║    ZOO════════════════FESTIVAL GROUNDS  ║
+        ║     ║                               ║   ║
+        ║     ║                               ║   ║
+        ║   CASTLE                            ║   ║
+        ║     ║                               ║   ║
+        ║     ║                               ║   ║
+        ║   BRDGE═══FOREST═════CLEARING═════CAMP  ║
+        ║     ║        ║                      ║   ║
+        ║     ║        ║                      ║   ║
+        ║    SHOP════VILAGE══════════════════BAR  ║
+        ║                                         ║
+        ╚═════════════════════════════════════════╝
+        """)
+    else:
+        print("You cannot see that.")
 def execute_command(command):
 
     if 0 == len(command):
