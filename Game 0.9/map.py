@@ -140,7 +140,7 @@ raises his brow at you. "What you want?" """,
 
     "items": [],
     
-    "market": [item_upg_sword, item_axe, item_chainmail, item_potion, item_clairvoyence],
+    "market": [item_upg_sword, item_axe, item_chainmail, item_potion],
 
     "combat": False,
 
