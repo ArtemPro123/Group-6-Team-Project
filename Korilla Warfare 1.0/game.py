@@ -505,7 +505,9 @@ def combat():
 								if item["type"] in type_attack: 
 									if item in inventory:  
 										gold = (item["cost"]*0.5) + gold
-										print("you gained " + str((item["cost"]*0.5)) + " Gold")  
+										print("you gained " + str((item["cost"]*0.5)) + " Gold")
+									else: 
+										inventory.append(item)
 								else: 
 									inventory.append(item)
 								print("The enemy dropped a " + item["name"])
